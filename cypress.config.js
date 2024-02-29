@@ -1,6 +1,6 @@
 const { defineConfig } = require("cypress");
 const fs = require("fs");
-const customIndexFunction = require("./index.js");
+const customIndexFunction = require("./index");
 
 module.exports = defineConfig({
   videoUploadPath: "cypress/videos",
