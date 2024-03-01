@@ -2,8 +2,15 @@ const { defineConfig } = require("cypress");
 const fs = require("fs");
 
 module.exports = defineConfig({
+  projectId: "ProjectId",
   video: true,
   videoCompression: true,
+  chromeWebSecurity: false,
+  screenshotOnRunFailure: true,
+  defaultCommandTimeout: 60000,
+  pageLoadTimeout: 60000,
+  viewportHeight: 960,
+  viewportWidth: 1536,
   // setupNodeEvents can be defined in either
   // the e2e or component configuration
   e2e: {
