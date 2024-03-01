@@ -1,0 +1,28 @@
+{
+  "name": "hepsiburada-interview",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cypress.config.cjs",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:spec": "cypress run --spec",
+    "cy:test:chrome": "cypress run --browser chrome",
+    "cy:test:firefox": "cypress run --browser firefox",
+    "cy:test:edge": "cypress run --browser edge",
+    "cy:verify": "cypress verify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Emre-Sonmez/hepsiburada-interview.git"
+  },
+  "author": "Emre Sonmez",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.6.6",
+    "start-server-and-test": "^2.0.3"
+  },
+  "dependencies": {
+    "cypress-real-events": "^1.12.0"
+  }
+}
