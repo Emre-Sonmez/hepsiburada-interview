@@ -15,6 +15,7 @@ describe("Pet Shop", () => {
     cy.get('#btnLogin').should('be.visible').click()
     cy.get('#txtPassword').should('be.visible').type('Test123!*')
     cy.get('#btnEmailSelect').should('be.visible').click()
+    cy.get("#login").click({ force: true });
   });
 
   it("Add a pet shop product to cart and check", () => {
