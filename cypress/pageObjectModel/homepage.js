@@ -10,14 +10,14 @@ export class homepage {
     cy.get(
       '[href="https://www.hepsiburada.com/kampanyalar/yurt-disindan-urunler?wt_int=hytop.yurtdisi.kampanya"]'
     )
-      .should("be.visible")
-      .then((element) => {
-        if (element.length > 0) {
-          cy.wrap(element).click();
-        } else {
-          cy.log("No element found");
-        }
-      });
+      .if("visible")
+      .then(() => {
+        cy.get(
+          '[href="https://www.hepsiburada.com/kampanyalar/yurt-disindan-urunler?wt_int=hytop.yurtdisi.kampanya"]'
+        ).click({ force: true });
+      })
+      .else()
+      .log("No element found");
   }
 
   goLoginPage() {
