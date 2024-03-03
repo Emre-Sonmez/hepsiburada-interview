@@ -21,7 +21,7 @@ describe("Pet Shop", () => {
     });
 
     homepagePom.goProductsFromAbroadPage();
-    homepagePom.selectFirstProduct();
+    homepagePom.addFirstProductToCart();
     homepagePom.goShoppingCartPage();
     shoppingCartPagePom.deleteButton();
   });
