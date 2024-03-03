@@ -5,7 +5,7 @@ import { shoppingCartPage } from "../../pageObjectModel/shoppingCartPage";
 const shoppingCartPagePom = new shoppingCartPage();
 const homepagePom = new homepage();
 
-describe("Pet Shop", () => {
+describe("Add Product", () => {
   beforeEach(() => {
     cy.log("Test starts");
     homepagePom.navigate();
@@ -13,7 +13,7 @@ describe("Pet Shop", () => {
     homepagePom.goLoginPage();
   });
 
-  it("Add a pet shop product to cart and check", () => {
+  it("Add a product to cart and check", () => {
     cy.fixture("loginData").as("credentials");
 
     cy.get("@credentials").then((data) => {
