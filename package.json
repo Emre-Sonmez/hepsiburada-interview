@@ -10,7 +10,8 @@
     "cy:test:chrome": "cypress run --browser chrome",
     "cy:test:firefox": "cypress run --browser firefox",
     "cy:test:edge": "cypress run --browser edge",
-    "cy:verify": "cypress verify"
+    "cy:verify": "cypress verify",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
