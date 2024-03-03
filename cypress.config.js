@@ -12,10 +12,12 @@ module.exports = defineConfig({
   pageLoadTimeout: 60000,
   viewportHeight: 960,
   viewportWidth: 1536,
+  reporter: 'cypress-mochawesome-reporter',
   // setupNodeEvents can be defined in either
   // the e2e or component configuration
   e2e: {
     setupNodeEvents(on, config) {
+      require('cypress-mochawesome-reporter/plugin')(on, config);
       on("after:spec", (spec, results) => {
         if (results && results.video) {
           // Do we have failures for any retry attempts?

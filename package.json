@@ -23,6 +23,7 @@
     "start-server-and-test": "^2.0.3"
   },
   "dependencies": {
+    "cypress-mochawesome-reporter": "^3.8.2",
     "cypress-real-events": "^1.12.0"
   }
 }
