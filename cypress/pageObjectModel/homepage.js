@@ -48,9 +48,7 @@ export class homepage {
   }
 
   addFirstProductToCart() {
-    cy.get(
-      "[type='comfort']:nth-of-type(1) .moria-ProductCard-gyqBb [type='comfort']:nth-of-type(2)"
-    ).realHover("mouse");
+    cy.get("[data-test-id='product-info-wrapper']").eq(13).realHover("mouse");
     cy.contains("Sepete ekle")
       .should("be.visible")
       .should("contain.text", "Sepete ekle")
