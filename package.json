@@ -11,7 +11,7 @@
     "cy:test:firefox": "cypress run --browser firefox",
     "cy:test:edge": "cypress run --browser edge",
     "cy:verify": "cypress verify",
-    "start": "node server.js"
+    "start": "npm start"
   },
   "repository": {
     "type": "git",
