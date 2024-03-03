@@ -20,7 +20,7 @@ import "./commands";
 // require('./commands')
 
 Cypress.on("uncaught:exception", (err, runnable) => {
-  // Bu satırı ekleyerek uncaught:exception olayını dinleyebilirsiniz.
-  // Davranışı devre dışı bırakmak için false döndürün.
+// Combining these lines you can listen for the uncaught:exception event.
+// Return false to disable the behavior.
   return false;
 });
