@@ -42,5 +42,6 @@ describe("Pet Shop", () => {
     cy.get(
       "div:nth-of-type(17) .treeCategoryContent-XPVj5InCxOWIJtyTC35Z"
     ).click({ force: "true" });
+    cy.get("#login").click({ force: true });
   });
 });
