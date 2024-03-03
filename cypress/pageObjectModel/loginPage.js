@@ -1,22 +1,35 @@
 export class loginPage {
   get usernameField() {
     cy.wait(5000);
-    return cy.get("#txtUserName");
+    return cy
+      .get("#txtUserName")
+      .should("be.visible")
+      .should(
+        "have.attr",
+        "placeholder",
+        "E-posta adresi veya telefon numarası"
+      );
   }
 
   get loginBtnUsername() {
-    cy.wait(5000);
-    return cy.get("#btnLogin");
+    return cy
+      .get("#btnLogin")
+      .should("be.visible")
+      .should("contain.text", "Giriş yap");
   }
 
   get passwordField() {
-    cy.wait(5000);
-    return cy.get("#txtPassword");
+    return cy
+      .get("#txtPassword")
+      .should("be.visible")
+      .should("have.attr", "placeholder", "Şifre");
   }
 
   get loginBtnPassword() {
-    cy.wait(5000);
-    return cy.get("#btnEmailSelect");
+    return cy
+      .get("#btnEmailSelect")
+      .should("be.visible")
+      .should("contain.text", "Giriş yap");
   }
 }
 

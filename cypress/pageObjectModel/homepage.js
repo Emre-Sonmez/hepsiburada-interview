@@ -23,26 +23,40 @@ export class homepage {
   goLoginPage() {
     cy.wait(3000);
     cy.get("#myAccount").realHover("mouse");
-    cy.get("#login").click({ force: true });
-    cy.wait(7000);
+    cy.get("#login")
+      .should("be.visible")
+      .should("contain.text", "Giriş Yap")
+      .click({ force: true });
+    cy.url().should("contains", "https://giris.hepsiburada.com/");
   }
 
   goShoppingCartPage() {
-    cy.get("#shoppingCart").click({ force: true });
+    cy.get("#shoppingCart").should("exist").click({ force: true });
   }
 
   goProductsFromAbroadPage() {
     cy.get(
       'a[href="https://www.hepsiburada.com/kampanyalar/yurt-disindan-urunler?wt_int=hytop.yurtdisi.kampanya"]'
-    ).click({ force: true });
+    )
+      .should("be.visible")
+      .click({ force: true });
+
+    cy.url().should(
+      "contains",
+      "https://www.hepsiburada.com/kampanyalar/yurt-disindan-urunler"
+    );
   }
 
   selectFirstProduct() {
     cy.get(
       "[type='comfort']:nth-of-type(1) .moria-ProductCard-gyqBb [type='comfort']:nth-of-type(2)"
     ).realHover("mouse");
-    cy.get(".moria-ProductCard-fJNuEt").click({ force: true });
-    cy.get(".moria-ProductCardButton-gAKKtp").click({ force: true });
-    cy.wait(3000);
+    cy.get(".moria-ProductCard-fJNuEt")
+      .should("be.visible")
+      .click({ force: true });
+    cy.get(".moria-ProductCardButton-gAKKtp")
+      .should("be.visible")
+      .should("contain.text", "Sepete ekle")
+      .click({ force: true });
   }
 }
