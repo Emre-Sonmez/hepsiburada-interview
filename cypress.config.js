@@ -2,11 +2,11 @@ const { defineConfig } = require("cypress");
 const fs = require("fs");
 
 module.exports = defineConfig({
-  projectId: "ProjectId",
   video: true,
   videoCompression: true,
-  chromeWebSecurity: false,
   screenshotOnRunFailure: true,
+  chromeWebSecurity: false,
+  electronWebSecurity: false,
   defaultCommandTimeout: 60000,
   pageLoadTimeout: 60000,
   viewportHeight: 960,
