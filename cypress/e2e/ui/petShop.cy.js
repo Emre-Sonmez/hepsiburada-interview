@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 import "cypress-real-events/support";
-import { Homepage } from "../../pageObjectModel/homepage";
-const homepagePom = new Homepage();
+import { homepage } from "../../pageObjectModel/homepage";
+const homepagePom = new homepage();
 
 describe("Pet Shop", () => {
   beforeEach(() => {
@@ -9,24 +9,22 @@ describe("Pet Shop", () => {
     homepagePom.navigate();
     homepagePom.urlRedirectControl();
     homepagePom.goLoginPage();
-
   });
 
   it("Add a pet shop product to cart and check", () => {
-    cy.wait(5000)
-    cy.login('hepsiburada.interview@gmail.com', 'Test123!*');
-
+    cy.fixture("loginData").as("credentials");
+    cy.get("@credentials").then((data) => {
+      cy.login(data.username, data.password);
+    });
     cy.get(
-      "div#container div.sf-TopLinks-BNeUkuZpKh9UMA2_zK8p > ul > li:nth-child(3) > a"
-    ).click();
-    cy.get(
-      "div:nth-of-type(17) .treeCategoryContent-XPVj5InCxOWIJtyTC35Z"
-    ).click({ force: "true" });
+      'a[href="https://www.hepsiburada.com/kampanyalar/yurt-disindan-urunler?wt_int=hytop.yurtdisi.kampanya"]'
+    ).click({ force: true });
     cy.get(
       "[type='comfort']:nth-of-type(1) .moria-ProductCard-gyqBb [type='comfort']:nth-of-type(2)"
-    ).realHover();
+    ).realHover("mouse");
     cy.get(".moria-ProductCard-fJNuEt").click({ force: true });
     cy.get(".moria-ProductCardButton-gAKKtp").click({ force: true });
+    cy.wait(3000);
     cy.get("#shoppingCart").click({ force: true });
   });
 });
