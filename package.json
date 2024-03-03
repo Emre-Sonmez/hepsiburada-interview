@@ -22,6 +22,7 @@
     "cypress": "^13.6.6"
   },
   "dependencies": {
+    "cypress-mochawesome-reporter": "^3.8.2",
     "cypress-real-events": "^1.12.0"
   }
 }
