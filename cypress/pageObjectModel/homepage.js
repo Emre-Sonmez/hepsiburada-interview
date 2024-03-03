@@ -24,7 +24,7 @@ export class homepage {
     cy.wait(3000);
     cy.get("#myAccount").realHover("mouse");
     cy.get("#login").click({ force: true });
-    cy.wait(3000);
+    cy.wait(7000);
   }
 
   goShoppingCartPage() {
