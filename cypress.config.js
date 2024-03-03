@@ -5,7 +5,6 @@ module.exports = defineConfig({
   projectId: "ProjectId",
   video: true,
   videoCompression: true,
-  chromeWebSecurity: false,
   screenshotOnRunFailure: true,
   defaultCommandTimeout: 60000,
   pageLoadTimeout: 60000,
