@@ -47,16 +47,21 @@ export class homepage {
     );
   }
 
-  selectFirstProduct() {
+  addFirstProductToCart() {
     cy.get(
       "[type='comfort']:nth-of-type(1) .moria-ProductCard-gyqBb [type='comfort']:nth-of-type(2)"
     ).realHover("mouse");
-    cy.get(".moria-ProductCard-fJNuEt")
-      .should("be.visible")
-      .click({ force: true });
-    cy.get(".moria-ProductCardButton-gAKKtp")
+    cy.contains("Sepete ekle")
       .should("be.visible")
       .should("contain.text", "Sepete ekle")
       .click({ force: true });
+    cy.wait(5000);
+    cy.contains("Sepete ekle")
+      .should("be.visible")
+      .should("contain.text", "Sepete ekle")
+      .click({ force: true });
+    cy.wait(5000);
+    cy.contains("Ürün sepete eklendi").should("be.visible");
+    cy.wait(5000);
   }
 }
