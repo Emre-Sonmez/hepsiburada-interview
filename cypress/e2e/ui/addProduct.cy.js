@@ -42,7 +42,9 @@ describe("Add Product", () => {
     homepage.goShoppingCartPage.should("exist").click({ force: true });
     cy.url().should("contains", "https://checkout.hepsiburada.com/sepetim");
 
-    shoppingCartPage.deleteProductButton.should("be.visible").click({ force: true });
+    shoppingCartPage.deleteProductButton
+      .should("be.visible")
+      .click({ force: true });
     cy.deletePopupControl();
     cy.contains("Ürün sepetinizden kaldırıldı").should("be.visible");
   });
